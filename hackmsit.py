@@ -31,7 +31,7 @@ def ws_connect():
         
    socketio.emit('msg',{'count':'0'},namespace='/chat',broadcast=True)
 
-
+#Function which checks wether the entered text is a link or not
 def check(link):
         if link[0:4] == 'http':
             return '<a  target="_blank" href='+link+'>'+link+'</a>'
@@ -66,7 +66,6 @@ def auto_print(message):
 
 
 if __name__ == '__main__' :
-    #port = int(os.environ.get('PORT', 5000))
-
+    
     socketio.run(app,host='0.0.0.0',port=5000,debug=True)
     #app.run(debug=True)
